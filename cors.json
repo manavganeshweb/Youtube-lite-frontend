@@ -1,0 +1,16 @@
+[
+  {
+    "origin": ["http://localhost:5173"],
+    "method": ["GET", "POST", "PUT", "DELETE", "HEAD"],
+    "responseHeader": ["Content-Type", "x-goog-resumable"],
+    "maxAgeSeconds": 3600
+  },
+    {
+    "id": 1,
+    "title": "Video Title",
+    "description": "text",
+    "video_url": "http://...",
+    "thumbnail_url": "http://...",
+    "user_id": 1
+  }
+]
