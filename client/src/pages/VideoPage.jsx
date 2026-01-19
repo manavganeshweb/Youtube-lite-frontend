@@ -11,7 +11,7 @@ export default function VideoPage() {
 
   // fetch main video
   useEffect(() => {
-    axios.get(`/api/videos/${id}`)
+    axios.get(`${import.meta.env.SERVER_URL}/videos/${id}`)
       .then(res => setVideo(res.data))
       .catch(err => console.error(err));
   }, [id]);
@@ -20,7 +20,7 @@ export default function VideoPage() {
   useEffect(() => {
     if (!video?.user_id) return;
 
-    axios.get(`/api/videos/uploader/${video.user_id}`)
+    axios.get(`${import.meta.env.SERVER_URL}/videos/uploader/${video.user_id}`)
       .then(res => setRelated(res.data))
       .catch(err => console.error(err));
   }, [video]);

@@ -41,7 +41,7 @@ useEffect(() => {
   const token = localStorage.getItem("token");
   if (!token) return; 
   axios
-    .get("/api/videos", {
+    .get(`${import.meta.env.SERVER_URL}/videos`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
     .then((res) => {

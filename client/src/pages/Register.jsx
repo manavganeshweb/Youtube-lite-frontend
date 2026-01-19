@@ -11,7 +11,7 @@ export default function Register() {
     if (form.name || !form.email || !form.password) return alert("Fill fields");
     setLoading(true);
     try {
-      await axios.post("/api/auth/register", form);
+      await axios.post(`${import.meta.env.SERVER_URL}/auth/register`, form);
       alert("Registered — please login");
       nav("/login");
     } catch (err) {

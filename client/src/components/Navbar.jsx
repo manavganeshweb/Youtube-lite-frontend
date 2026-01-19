@@ -58,7 +58,7 @@ export default function Navbar() {
       return;
     }
 
-    fetch(`/api/videos/search?q=${debouncedSearch}`)
+    fetch(`${import.meta.env.SERVER_URL}/videos/search?q=${debouncedSearch}`)
       .then(res => res.json())
       .then(data => {
         setResults(data);
