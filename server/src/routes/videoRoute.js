@@ -8,9 +8,10 @@ dotenv.config();
 const router = express.Router();
 const pool = new Pool({
    connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  ssl: true,
+  max: 5,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 20000,
 });
 
 cloudinary.config({

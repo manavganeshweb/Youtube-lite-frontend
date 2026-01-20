@@ -7,9 +7,10 @@ const { Pool } = pkg;
 
 const pool = new Pool({
    connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  ssl: true,
+  max: 5,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 20000,
 });
 
 pool.connect()
