@@ -58,7 +58,7 @@ export default function Navbar() {
       return;
     }
 
-    fetch(`https://youtube-lite-server.onrender.com/api/videos/search?q=${debouncedSearch}`)
+    fetch(`https://youtube-lite-35l5.onrender.com/api/videos/search?q=${debouncedSearch}`)
       .then(res => res.json())
       .then(data => {
         setResults(data);

@@ -41,7 +41,7 @@ useEffect(() => {
   const token = localStorage.getItem("token");
   if (!token) return; 
   axios
-    .get(`https://youtube-lite-server.onrender.com/api/videos`, {
+    .get(`https://youtube-lite-35l5.onrender.com/api/videos`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
     .then((res) => {

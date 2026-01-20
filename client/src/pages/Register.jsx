@@ -11,7 +11,7 @@ export default function Register() {
     if (form.name || !form.email || !form.password) return alert("Fill fields");
     setLoading(true);
     try {
-      await axios.post(`https://youtube-lite-server.onrender.com/api/auth/register`, form);
+      await axios.post(`https://youtube-lite-35l5.onrender.com/api/auth/register`, form);
       alert("Registered — please login");
       nav("/login");
     } catch (err) {

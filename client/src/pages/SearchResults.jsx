@@ -11,7 +11,7 @@ export default function SearchResults() {
     if (!query) return;
 
     axios
-      .get(`https://youtube-lite-server.onrender.com/api/videos/search?q=${query}`)
+      .get(`https://youtube-lite-35l5.onrender.com/api/videos/search?q=${query}`)
       .then((res) => setVideos(res.data))
       .catch((err) => console.error(err));
   }, [query]);

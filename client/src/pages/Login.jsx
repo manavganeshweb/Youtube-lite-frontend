@@ -9,7 +9,7 @@ export default function Login() {
   const handleLocalLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`https://youtube-lite-server.onrender.com/api/auth/login`, {
+      const res = await axios.post(`https://youtube-lite-35l5.onrender.com/api/auth/login`, {
         email,
         password,
       }
@@ -54,7 +54,7 @@ export default function Login() {
 
         <div className="mt-4 flex justify-center">
           <a
-            href={`https://youtube-lite-server.onrender.com/api/auth/google`}
+            href={`https://youtube-lite-35l5.onrender.com/api/auth/google`}
             className="bg-white text-gray-800 font-semibold px-4 py-2 rounded-md hover:bg-gray-200 transition flex items-center"
           >
             <img
