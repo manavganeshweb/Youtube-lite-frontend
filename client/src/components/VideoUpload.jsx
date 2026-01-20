@@ -31,7 +31,7 @@ const VideoUpload = () => {
 
     try {
       setMessage("Uploading...");
-      const res = await axios.post(`${import.meta.env.SERVER_URL}/upload`, formData, {
+      const res = await axios.post(`https://youtube-lite-server.onrender.com/api/upload`, formData, {
             headers: {
             Authorization: `Bearer ${token}`, 
           },

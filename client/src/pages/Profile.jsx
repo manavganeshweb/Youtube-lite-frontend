@@ -10,7 +10,7 @@ export default function Profile() {
   useEffect(() => {
     if (!user) return;
     const token = localStorage.getItem("token");
-    axios.get(`${import.meta.env.SERVER_URL}/videos?mine=true`, { headers: { Authorization: `Bearer ${token}`, } })
+    axios.get(`https://youtube-lite-server.onrender.com/api/videos?mine=true`, { headers: { Authorization: `Bearer ${token}`, } })
       .then(res => setVideos(res.data))
       .catch(err => console.error(err));
   }, [user]);
@@ -27,7 +27,7 @@ export default function Profile() {
     const fd = new FormData();
     fd.append("image", file);
 
-    const res = await axios.post(`${import.meta.env.SERVER_URL}/upload/profile-image`, fd, {
+    const res = await axios.post(`https://youtube-lite-server.onrender.com/api/upload/profile-image`, fd, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -41,7 +41,7 @@ export default function Profile() {
     if (!confirm("Delete this video permanently?")) return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`${import.meta.env.SERVER_URL}/videos/${id}`, { headers: { Authorization: `Bearer ${token}` }});
+      await axios.delete(`https://youtube-lite-server.onrender.com/api/videos/${id}`, { headers: { Authorization: `Bearer ${token}` }});
       setVideos((v) => v.filter((item) => item.id !== id));
     } catch (err) {
       alert(err?.response?.data?.message || "Delete failed");
