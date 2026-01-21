@@ -18,8 +18,13 @@ export default function Login() {
       localStorage.setItem("user", JSON.stringify(res.data.user));
       navigate("/home");
     } catch (err) {
-      alert("Login failed. Please try again.");
-    }
+  console.log("LOGIN ERROR:", err.response);
+
+  alert(
+    err.response?.data?.message ||
+    "Login failed. Server error."
+  );
+}
   };
 
   return (
