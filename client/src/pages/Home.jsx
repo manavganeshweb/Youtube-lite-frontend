@@ -30,9 +30,8 @@ export default function Home() {
     const tokenFromGoogle = params.get("token");
       const user = params.get("user");
 
-    if (tokenFromGoogle && user) {
+    if (tokenFromGoogle) {
       localStorage.setItem("token", tokenFromGoogle);
-          localStorage.setItem("user", user);
       window.history.replaceState({}, "", "/home");
     }
   }, []);
